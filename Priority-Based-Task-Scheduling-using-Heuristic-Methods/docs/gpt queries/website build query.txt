@@ -1,0 +1,48 @@
+Project Title:
+	Priority based task scheduling using heuristic methods in cloud environment 
+
+Goals:
+	1. Incoming tasks should be classified with different levels of priority
+	2. Best Resources should be identified using heuristic approach 
+	3. Resources should be allocated to incoming tasks based on priority levels
+
+I want to create a streamlit web application using python which can be deployed on a cloud server maybe an EC2 instance and access it through public URL. 
+
+The web application should be a simple webpage with 3 divisions one after another.
+
+First division will have the title "Create Tasks" and will contain the following input fields:
+	Task ID: (automatically generated and pre-filled uuid)
+	deadline: in milli seconds
+	computational_complexity: (heavy, medium, light)
+	user_defined_priority:  (high, medium, low)
+	resource required:
+		CPU: number input field which only takes input of positive numbers between 1-100
+		RAM: number input field which only takes input of positive numbers between 1-1024. this field will have a text after the input box (kb) to represent that the user is entering number of kb the task in going to use.
+		Network Bandwidth: number input field which takes kb as input. ranging from 0-10GB
+
+	Submit button: When clicked the form is cleared and the data is shown in the second part of the website.
+	Random process generator button: when clicked, it automatically populates 30 records with suitablly random values in the second part of the website.
+
+Second division will contain an empty Table with headings as follows.
+
+	TaskID, deadline, computational_complexity, user_defined_priority, system_priority, CPU, RAM, Network_Bandwidth.
+
+- The table shall be empty in the beginning. upon adding tasks using first part, the table keeps populating.
+- Submit Tasks button. upon clicking the button, the tasks in the table will be submitted to the algorithm and they will execute these tasks based on the logic and show the results in 3rd part of the website.
+
+Third division of the website will contain the following table which will show the results of each algorithm after running.
+
+Heading for the tables:
+Scheduling Algorithm used, Average Turnaround Time, Average Waiting Time
+
+Sample results:
+The best algorithms for these processes is ---
+Algorithm : ---
+CPU Utilization : ---
+Throughput : --- % (Process per unit time)
+TurnAround Time : xxx.xx
+Waiting Time : xxx.xx
+Response Time : xxx.xx
+
+I'll be implementing heuristic algorithms which will need the Tasks list generated in 2nd division of the UI. These algorithms will compute the tasks and return the optimal result which will be represented in 3rd division of the UI.
+Write python code, which is flexible enough for me to interact with data, also return required values to other functions and represent them in the UI.
